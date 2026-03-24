@@ -1,63 +1,82 @@
-# Number Cycle Detection Project
+# 🔢 Number Cycle Analyzer (PyQt5)
 
-## 📌 Project Overview
-
-This project is a Python program that analyzes number transformations using binary and decimal conversions.
-The program generates a sequence of numbers starting from a user input and detects when the sequence repeats (cycle detection).
+A simple PyQt5-based desktop application that explores how numbers transform across **binary, decimal, and hexadecimal systems**, and detects repeating cycles in the process.
 
 ---
 
-## ⚙️ How the Program Works
+## 📌 Overview
 
-1. User enters a positive integer.
-2. The number is converted from decimal to binary.
-3. The binary number is reversed.
-4. It is converted back to decimal.
-5. The value increases by 2.
-6. The process repeats until a cycle is detected.
+This application takes a positive integer and repeatedly applies a transformation:
 
-----
+1. Convert the number to binary
+2. Reverse the binary representation
+3. Convert it back to decimal
+4. Add 2
+5. Repeat until a cycle is detected
 
-## 📂 Project Files
-
-* `project.py` → Main Python program
-* `amplitude.txt` → Stores the detected cycle and period
-* `depart.txt` → Stores the starting number entered by the user
+All steps are recorded and displayed in a table.
 
 ---
 
-## ▶️ How to Run
+## 🚀 Features
 
-Make sure Python 3 is installed, then run:
+* Accepts any positive integer input
+* Tracks number transformations step-by-step
+* Displays:
+
+  * Cycle sequence
+  * Binary values
+  * Hexadecimal values
+  * Cycle period
+* Detects repeating patterns automatically
+* Stores results locally in a file (`amplitude.dat`)
+
+---
+
+## 🖥️ How to Run
+
+### 1. Install dependencies
+
+```
+pip install PyQt5
+```
+
+### 2. Run the program
 
 ```
 python project.py
 ```
 
-Enter a number when asked.
+> Make sure `interface_project.ui` is in the same folder.
 
 ---
 
-## 📊 Example Output
-
-Input:
+## 📁 Files
 
 ```
-39
-```
-
-Output:
-
-```
-{'cycle': '39#59#57#41#39#', 'period': 4}
+project.py              # Main application logic
+interface_project.ui   # GUI layout (Qt Designer)
+amplitude.dat          # Generated data file
+README.md              # Documentation
 ```
 
 ---
 
-## 👨‍💻 Authors
+## ⚠️ Notes
 
-University Project by:
+* Input must be a **positive integer**
+* The program stops if no cycle is found within 1024 iterations
+* Results are appended to `amplitude.dat`
 
-* ABDIHAFITH
-* BILAL
+---
 
+## 💡 Idea Behind the Project
+
+This project demonstrates how number representations (binary ↔ decimal) can produce interesting repeating behaviors when transformed iteratively.
+
+---
+
+## 👤 Authors
+
+* Abdihafith
+* Bilal
